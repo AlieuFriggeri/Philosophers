@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 09:52:10 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:44:11 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:49:26 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,35 +48,35 @@ philosopher must eat"
 typedef struct s_fork{
 	int	left;
 	int	right;
-} t_fork;
+}	t_fork;
 
 typedef struct s_philo{
-	int		id;
-	int		last_meal;
-	int		time_to_eat;
-	int		time_to_sleep;
-	long long		time_to_die;
-	int		dead;
-	int		nb_time_ate;
+	int			id;
+	int			last_meal;
+	int			time_to_eat;
+	int			time_to_sleep;
+	long long	time_to_die;
+	int			dead;
+	int			nb_time_ate;
 	pthread_t	thread;
-	t_fork	forks;
-} t_philo;
+	t_fork		forks;
+}	t_philo;
 
 typedef struct s_main{
-	int	nb_thread;
-	int	numphilo;
-	int	philo_dead;
-	long long	t0;	
-	int	nb_time_to_eat;
-	t_philo	*philo;
-	pthread_t	waiter;
+	int				nb_thread;
+	int				numphilo;
+	int				philo_dead;
+	long long		t0;	
+	int				nb_time_to_eat;
+	t_philo			*philo;
+	pthread_t		waiter;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t print;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		time_to_die;
-	int		nb_time_ate;
-} t_main;
+	pthread_mutex_t	print;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				time_to_die;
+	int				nb_time_ate;
+}	t_main;
 
 int			init_philo(t_main *main);
 void		fill_philo(t_main *main, int i, int j);

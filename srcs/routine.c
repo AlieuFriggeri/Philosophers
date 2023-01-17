@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:16:56 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:21:04 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:51:59 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	*routine(void *args)
 	if (main->nb_time_to_eat > 0)
 	{
 		while (main->nb_time_to_eat > main->philo[i].nb_time_ate
-				&& main->philo_dead == FALSE)
-				routine_execute(main, i);
+			&& main->philo_dead == FALSE)
+			routine_execute(main, i);
 	}
 	else
 	{
@@ -52,7 +52,7 @@ int	routine_execute(t_main *main, int i)
 
 void	*checker(void *args)
 {
-	t_main *main;
+	t_main	*main;
 	int		i;
 
 	main = (t_main *)args;
@@ -60,7 +60,7 @@ void	*checker(void *args)
 	if (main->nb_time_to_eat > 0)
 	{
 		while (main->nb_time_to_eat > main->philo[i].nb_time_ate
-				&& main->philo_dead == FALSE)
+			&& main->philo_dead == FALSE)
 		{
 			if (philo_is_dead(main, &i) == TRUE)
 				break ;

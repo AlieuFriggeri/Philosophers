@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:12:59 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:16:22 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:51:22 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	create_threads(t_main *main)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	main->philo_dead = FALSE;
@@ -25,7 +25,7 @@ int	create_threads(t_main *main)
 	{
 		main->nb_thread = i;
 		if (pthread_create(&main->philo[i].thread,
-					NULL, &routine,  (void *) main) != 0)
+				NULL, &routine, (void *) main) != 0)
 			return (FALSE);
 		i++;
 		usleep(1000);
@@ -40,7 +40,7 @@ int	create_threads(t_main *main)
 
 int	join_threads(t_main *main)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < main->numphilo)
@@ -56,7 +56,7 @@ int	join_threads(t_main *main)
 
 int	destroy_mutex(t_main *main)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < main->numphilo)

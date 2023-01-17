@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:11:31 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:14:33 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:50:14 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	init_philo(t_main *main)
 {
-	int i;
-	int j;
-
+	int	i;
+	int	j;
 
 	main->philo = malloc(sizeof(t_philo) * (main->numphilo + 1));
 	if (main->philo == NULL)
@@ -41,7 +40,6 @@ void	fill_philo(t_main *main, int i, int j)
 	main->philo[i].nb_time_ate = 0;
 	main->philo[i].forks.left = i;
 	main->philo[i].forks.right = j;
-	
 }
 
 int	ft_atoi(const char *str)

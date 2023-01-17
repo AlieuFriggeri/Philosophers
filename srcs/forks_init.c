@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:37:30 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:13:47 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:52:02 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	init_forks(t_main *main)
 
 void	unlock_forks(t_main *main)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < main->numphilo)

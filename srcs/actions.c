@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:35:44 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:11:53 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:51:52 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	drop_forks(t_main *main, int i)
 
 int	philo_is_dead(t_main *main, int *i)
 {
-	int time;
+	int	time;
 
 	if (*i == main->numphilo)
 		*i = 0;

@@ -6,17 +6,17 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 09:52:22 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 11:09:41 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:50:31 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/philo.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_main	main;
 
-	if (error_manager( argv, argc, &main) == FALSE)
+	if (error_manager(argv, argc, &main) == FALSE)
 		return (1);
 	if (init_philo(&main) == FALSE)
 		return (1);
@@ -61,7 +61,7 @@ void	free_philo(t_main *main)
 	free(main->forks);
 }
 
-int only_one(t_main *main)
+int	only_one(t_main *main)
 {
 	if (pthread_mutex_init(&main->print, NULL) != 0)
 		return (FALSE);

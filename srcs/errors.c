@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 16:44:31 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 10:22:43 by kistod           ###   ########.fr       */
+/*   Updated: 2023/01/17 18:49:54 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
