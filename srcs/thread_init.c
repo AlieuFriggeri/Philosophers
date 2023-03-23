@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:12:59 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:51:22 by kistod           ###   ########.fr       */
+/*   Updated: 2023/03/24 00:05:07 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	create_threads(t_main *main)
 				NULL, &routine, (void *) main) != 0)
 			return (FALSE);
 		i++;
-		usleep(1000);
+		nsleep(1000);
 	}
 	if (pthread_create(&main->waiter, NULL, &checker, (void *) main) != 0)
 		return (FALSE);
-	usleep(1000);
+	nsleep(1000);
 	if (join_threads(main) == FALSE)
 		return (FALSE);
 	return (TRUE);

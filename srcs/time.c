@@ -6,7 +6,7 @@
 /*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:38 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:51:36 by kistod           ###   ########.fr       */
+/*   Updated: 2023/03/24 00:04:16 by kistod           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ long long	delta_time(long long time)
 void	exec_action(long long time)
 {
 	usleep(time * 1000);
+}
+
+
+void nsleep(long time)
+{
+	time = gettime() + time;
+	while (gettime() < time)
+	{
+		usleep(5);
+	}
 }
