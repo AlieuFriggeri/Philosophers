@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 09:52:10 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 00:04:30 by kistod           ###   ########.fr       */
+/*   Updated: 2023/03/24 13:16:05 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,5 @@ int			ft_strlen(const char *str);
 void		print_args_error(t_main *main, int argc);
 int			only_one(t_main *main);
 void		free_philo(t_main *main);
-void nsleep(long time);
-
+void		nsleep(unsigned long long to_wait);
 #endif

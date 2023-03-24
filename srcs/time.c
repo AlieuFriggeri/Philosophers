@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:38 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 00:04:16 by kistod           ###   ########.fr       */
+/*   Updated: 2023/03/24 13:17:35 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ void	exec_action(long long time)
 }
 
 
-void nsleep(long time)
+void	nsleep(unsigned long long to_wait)
 {
-	time = gettime() + time;
-	while (gettime() < time)
+	long long	target;
+
+	target = gettime() + to_wait;
+	while (gettime() < target)
 	{
 		usleep(5);
 	}
