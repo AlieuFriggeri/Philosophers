@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:38 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 13:17:35 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:58:33 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ long long	delta_time(long long time)
 
 void	exec_action(long long time)
 {
-	usleep(time * 1000);
+	nsleep(time);
 }
 
 
@@ -37,7 +37,7 @@ void	nsleep(unsigned long long to_wait)
 {
 	long long	target;
 
-	target = gettime() + to_wait;
+	target = gettime() + (to_wait);
 	while (gettime() < target)
 	{
 		usleep(5);

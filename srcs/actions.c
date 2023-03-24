@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:35:44 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 14:43:31 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:55:07 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	philo_eat(t_main *main, int i)
 {
-	main->philo[i].time_to_die = gettime();
 	if (pthread_mutex_lock(&main->forks[main->philo[i].forks.right]) != 0)
 		return (FALSE);
 	if (philo_print(main, main->philo[i].id, FORK) == FALSE)
@@ -25,9 +24,9 @@ int	philo_eat(t_main *main, int i)
 		return (FALSE);
 	if (philo_print(main, main->philo[i].id, EAT) == FALSE)
 		return (FALSE);
+	main->philo[i].time_to_die = gettime();
 	exec_action(main->time_to_eat);
 	drop_forks(main, i);
-	main->philo[i].time_to_die = gettime();
 	return (TRUE);
 }
 
