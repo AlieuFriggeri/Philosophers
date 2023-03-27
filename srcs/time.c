@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:39:38 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 14:58:33 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/03/27 12:59:58 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	exec_action(long long time)
 {
 	nsleep(time);
 }
-
 
 void	nsleep(unsigned long long to_wait)
 {

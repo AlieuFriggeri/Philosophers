@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:35:44 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 14:55:07 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/03/27 12:59:40 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ int	philo_eat(t_main *main, int i)
 		return (FALSE);
 	if (philo_print(main, main->philo[i].id, EAT) == FALSE)
 		return (FALSE);
+	if (pthread_mutex_lock(&main->ate) != 0)
+		return (FALSE);
 	main->philo[i].time_to_die = gettime();
+	if (pthread_mutex_unlock(&main->ate) != 0)
+		return (FALSE);
 	exec_action(main->time_to_eat);
 	drop_forks(main, i);
 	return (TRUE);
@@ -62,11 +66,17 @@ int	philo_is_dead(t_main *main, int *i)
 
 	if (*i == main->numphilo)
 		*i = 0;
+	if (pthread_mutex_lock(&main->ate) != 0)
+		return (FALSE);
 	time = delta_time(main->philo[*i].time_to_die);
+	if (pthread_mutex_unlock(&main->ate) != 0)
+		return (FALSE);
 	if (time > main->time_to_die)
 	{
 		philo_print(main, main->philo[*i].id, DIED);
+		pthread_mutex_lock(&main->ate);
 		main->philo_dead = TRUE;
+		pthread_mutex_unlock(&main->ate);
 		return (TRUE);
 	}
 	i++;

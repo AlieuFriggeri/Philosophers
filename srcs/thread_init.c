@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   thread_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:12:59 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 00:05:07 by kistod           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:27:33 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int	destroy_mutex(t_main *main)
 		i++;
 	}
 	pthread_mutex_destroy(&main->print);
+	pthread_mutex_destroy(&main->ate);
 	return (TRUE);
 }

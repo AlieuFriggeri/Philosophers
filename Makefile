@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kistod <kistod@student.42.fr>              +#+  +:+       +#+         #
+#    By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 18:49:40 by vgroux            #+#    #+#              #
-#    Updated: 2023/01/16 17:03:15 by kistod           ###   ########.fr        #
+#    Updated: 2023/03/27 12:57:27 by afrigger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ RESET = \033[0m
 NAME =     philo
 
 CC =         gcc
-CFLAGS =     -Wall -Werror -Wextra 
+CFLAGS =     -Wall -Werror -Wextra
 RM =         rm -rf
 
 DIR_H = headers/
@@ -37,7 +37,7 @@ OBJS =		${SRCS:${DIR_S}%.c=${DIR_O}%.o}
 # ${NAME}: title ${LIBFT} ${MLX} ${OBJS}
 ${NAME}: ${OBJS}
 	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: $(NAME) Objects were created${GREY}"
-	${CC} -I $(DIR_H) ${OBJS} -o ${NAME} -lpthread
+	${CC} ${CFLAGS} -I $(DIR_H) ${OBJS} -o ${NAME} -lpthread
 	@echo "$(RESET)[$(GREENGREEN)${NAME}$(RESET)]: $(NAME) created !"
 
 title:

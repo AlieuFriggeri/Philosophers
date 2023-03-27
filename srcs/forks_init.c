@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   forks_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:37:30 by kistod            #+#    #+#             */
-/*   Updated: 2023/01/17 18:52:02 by kistod           ###   ########.fr       */
+/*   Updated: 2023/03/27 12:59:46 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	init_forks(t_main *main)
 			return (FALSE);
 		i++;
 	}
+	if (pthread_mutex_init(&main->ate, NULL) != 0)
+		return (FALSE);
 	return (TRUE);
 }
 

@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 09:52:10 by kistod            #+#    #+#             */
-/*   Updated: 2023/03/24 13:16:05 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/03/27 12:25:18 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ typedef struct s_main{
 	pthread_t		waiter;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print;
+	pthread_mutex_t	ate;
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				time_to_die;
